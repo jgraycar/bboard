@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only: [:show, :edit, :update, :destroy]
+  before_action :set_board, only: [:edit, :update, :destroy]
 
   # GET /boards
   # GET /boards.json
@@ -10,6 +10,7 @@ class BoardsController < ApplicationController
   # GET /boards/1
   # GET /boards/1.json
   def show
+    @board = Board.where("url = ?", params[:url])[0]
   end
 
   # GET /boards/new
@@ -31,7 +32,7 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to @board, notice: 'Board was successfully created.' }
+        format.html { redirect_to "/#{url}", notice: 'Board was successfully created.' }
         format.json { render :show, status: :created, location: @board }
       else
         format.html { render :new }
@@ -67,7 +68,7 @@ class BoardsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_board
-      @board = Board.where("url = ?", params[:url])[0]
+      @board = Board.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
