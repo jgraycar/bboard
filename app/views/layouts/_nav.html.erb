@@ -2,7 +2,7 @@
   <div class="small-12 columns">
     <ul>
       <li><%= image_tag "logo.png" %></li>
-      <li><h2><a href="/">bboard.io/</a></h2></li>
+      <li><h2><a href="/">bboard.io<%= request.env['PATH_INFO'] %></a></h2></li>
     </ul>
   </div>
 </div>

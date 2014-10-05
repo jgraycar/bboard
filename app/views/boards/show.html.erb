@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @board.url %>
-</p>
-
-<%= link_to 'Edit', edit_board_path(@board) %> |
-<%= link_to 'Back', boards_path %>
+<div class="row">
+  <div class="column small-12">
+    <%= link_to 'Edit', edit_board_path(@board) %> |
+    <%= link_to 'Back', boards_path %>
+  </div>
+</div>
