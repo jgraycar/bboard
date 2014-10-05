@@ -62,3 +62,4 @@ gem 'foundation-rails', '~>5.4.3.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'hashids'

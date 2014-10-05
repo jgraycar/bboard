@@ -1,15 +1,24 @@
 Rails.application.routes.draw do
-  resources :images
-
-  resources :groups
-
-  resources :boards
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'pages#empty'
+
+  get '/:url' => 'boards#show'
+
+  resources :images
+
+  resources :groups
+
+  resources :boards, except: :index do
+    collection do
+      post '/create', to: "boards#create"
+      get '/:url', to: "boards#show"
+    end
+  end
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
