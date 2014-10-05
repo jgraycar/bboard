@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
-
+ruby "2.1.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use rubygems 2.3
+gem 'rubygems-update', '~> 2.3.0'
+# Use Postgres as database for Active Record since required by Heroku
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -30,10 +32,27 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Enables prettier urls, ie caltaiko.com/members/tom-hata vs caltaiko.com/members/1
+gem 'friendly_id', '~> 5.0.0'
+
+# Allows for easier meta tag setting
+gem 'metamagic'
+
+# Prettier forms
+gem 'simple_form'
+
+# Better nested forms
+gem 'cocoon'
+
+# Enables Foundation framework
+gem 'modernizr-rails'
+# Don't upgrade to 5.4.4!! Currently errors out
+gem 'foundation-rails', '~>5.4.3.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
