@@ -7,10 +7,24 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore generated Rdoc documentation
+/doc
+
+# Ignore AWS configuration
+/config/aws_config.yml
+
+# Ignore environment variable configuration
+/config/local_env.yml
+
+# Ignore text editor generated temp files
+# Do it here instead of globally since many people will be handling this code.
+*~
+*#
+.#*
+
+# Ignore Mac generated DS_Store binaries
+.DS_Store

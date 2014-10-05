@@ -37,6 +37,11 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Paperclip to attach images
+gem 'paperclip', '~> 4.1'
+# Enable AWS support
+gem 'aws-sdk'
+
 # Enables prettier urls, ie caltaiko.com/members/tom-hata vs caltaiko.com/members/1
 gem 'friendly_id', '~> 5.0.0'
 
