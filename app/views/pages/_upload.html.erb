@@ -1,15 +1,4 @@
-<div class="row">
-  <form class="small-12 medium-6 large-4 columns" id="drop">
-    <img src="assets/images/plus.png" />
-    <p>add a file</p>
-  </form>
-</div>
-
-<script type="text/javascript">
-  var uploader = new qq.FileUploader({
-    element: document.getElementById('my_file_uploader'),
-    action: '<%= add_files_post_path(@post) %>',
-    params: { "authenticity_token": "<%= form_authenticity_token %>" },
-    customHeaders: { "X-File-Upload": "true" }
-  });
-</script>
+    <form class="drop" action="boards/create" method="POST" id="drop">
+      <%= image_tag "plus.png" %>
+      <p>add an image</p>
+    </form>
