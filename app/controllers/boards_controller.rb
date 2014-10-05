@@ -24,7 +24,10 @@ class BoardsController < ApplicationController
   # POST /boards
   # POST /boards.json
   def create
-    @board = Board.new(board_params)
+    hasher = Hashids.new("dis be my salt yooo")
+    url = hasher.encode(Time.now.to_i)
+    params = { url: url }
+    @board = Board.new(params)
 
     respond_to do |format|
       if @board.save
@@ -64,7 +67,7 @@ class BoardsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_board
-      @board = Board.find(params[:id])
+      @board = Board.where("url = ?", params[:url])[0]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
