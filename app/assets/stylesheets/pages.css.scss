@@ -28,6 +28,10 @@
     li {
       display: inline-block;
 
+      a:hover {
+        background-color: #444;
+      }
+
       img {
         margin-top: -18px;
       }
